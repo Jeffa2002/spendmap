@@ -348,7 +348,7 @@ footer {
   }
 }
 
-.top-actions { display: flex; gap: 12px; }
+.top-actions { display: flex; gap: 12px; }.sync-status { align-self: center; color: var(--muted); font-size: 11px; white-space: nowrap; }
 .auth-shade { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 18px; background: #10211db8; }
 .auth-card { position: relative; width: min(100%, 460px); max-height: calc(100vh - 36px); overflow: auto; padding: 30px; border-radius: 16px; background: var(--paper); box-shadow: 0 20px 70px #0005; }
 .auth-card h2 { margin: 0 0 9px; font: 30px Georgia, serif; letter-spacing: -.03em; }
