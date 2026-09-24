@@ -1,0 +1,21 @@
+[Unit]
+Description=Spendmap account service
+After=network.target
+
+[Service]
+Type=simple
+User=spendmap
+Group=spendmap
+EnvironmentFile=/etc/spendmap.env
+WorkingDirectory=/var/www/spendmap/current
+ExecStart=/usr/bin/node server.mjs
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/spendmap
+
+[Install]
+WantedBy=multi-user.target

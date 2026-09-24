@@ -20,8 +20,12 @@ jobs:
       - name: Validate finance engine
         run: |
           set -euo pipefail
+          npm ci
           node --check app.mjs
+          node --check auth.mjs
+          node --check server.mjs
           npm test
+          npm run prepare-public
       - name: Publish atomic static release
         run: |
           set -euo pipefail
@@ -32,9 +36,12 @@ jobs:
           rsync -a --delete \
             --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='test' \
             ./ "$release/"
+          npm ci --omit=dev --prefix "$release"
           ln -sfn "$release" /var/www/spendmap/current.next
           mv -Tf /var/www/spendmap/current.next /var/www/spendmap/current
           nginx -t
           systemctl reload nginx
+          systemctl restart spendmap
           curl -fsSL https://spendmap.effectx.com.au/ | grep -q 'YOUR MONEY, MADE CLEAR'
+          curl -fsS https://spendmap.effectx.com.au/api/auth/me | grep -q '"user":null'
           echo "Production release ${GITHUB_SHA} verified"

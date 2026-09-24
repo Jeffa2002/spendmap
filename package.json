@@ -5,6 +5,16 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "demo": "node src/demo.mjs"
+    "demo": "node src/demo.mjs",
+    "prepare-public": "node scripts/prepare-public.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^14.0.0",
+    "@simplewebauthn/server": "^14.0.2",
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.2.1",
+    "otpauth": "^9.5.2",
+    "qrcode": "^1.5.4"
   }
 }

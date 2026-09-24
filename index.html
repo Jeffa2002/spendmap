@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <header class="topbar"><a class="brand" href="#top">spend<span>map</span></a><nav><a href="#plan">Plan</a><a href="#insights">Insights</a><a href="#switches">Switches</a></nav><button id="reset" class="quiet">Reset demo</button></header>
+    <header class="topbar"><a class="brand" href="#top">spend<span>map</span></a><nav><a href="#plan">Plan</a><a href="#insights">Insights</a><a href="#switches">Switches</a></nav><div class="top-actions"><button id="account" class="quiet">Sign in</button><button id="reset" class="quiet">Reset demo</button></div></header>
     <main id="top">
       <section class="hero"><p class="eyebrow">YOUR MONEY, MADE CLEAR</p><h1>Know where it goes.<br><em>Choose what stays.</em></h1><p class="lede">Spendmap turns each pay cycle into a clear plan, then identifies practical ways to reduce the cost of living—without selling your data or pretending to be financial advice.</p><div class="trust"><span>Local-first</span><span>Explainable maths</span><span>No bank logins in v1</span></div></section>
       <section class="summary" aria-label="Cash flow summary"><article><small>Monthly income</small><strong id="income">—</strong><span>normalised from your pay cycle</span></article><article><small>Monthly commitments</small><strong id="expenses">—</strong><span>fixed and flexible essentials</span></article><article class="surplus"><small>Room to move</small><strong id="surplus">—</strong><span id="surplus-copy">after entered expenses</span></article></section>
@@ -18,6 +18,6 @@
       </section>
       <section id="insights" class="workspace"><div class="section-title"><div><p class="eyebrow">02 / SEE THE PATTERN</p><h2>What your regular spending is doing</h2></div><p>Every figure uses the frequency you entered and shows its monthly equivalent.</p></div><div class="insight-grid"><article class="card"><h3>Category breakdown</h3><div id="categories" class="bars" aria-live="polite"></div></article><article class="card forecast"><h3>Pay-cycle view</h3><div id="forecast"></div><p class="note">This is a recurring cash-flow forecast, not an account balance or investment projection.</p></article></div></section>
       <section id="switches" class="workspace"><div class="section-title"><div><p class="eyebrow">03 / MAKE ROOM</p><h2>Potential savings, with receipts</h2></div><p>Recommendations are comparisons, not advice. Check availability, inclusions and contract terms before switching.</p></div><div id="opportunities" class="opportunities" aria-live="polite"></div></section>
-    </main><footer>Spendmap keeps this demo profile in your browser only. Product offers shown are illustrative catalogue entries, not live quotes.</footer><script type="module" src="app.mjs"></script>
+    </main><footer>Spendmap keeps this demo profile in your browser only. Product offers shown are illustrative catalogue entries, not live quotes.</footer><div id="auth-root"></div><script type="module" src="auth.mjs"></script><script type="module" src="app.mjs"></script>
   </body>
 </html>
