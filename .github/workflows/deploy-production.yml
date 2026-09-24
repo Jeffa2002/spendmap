@@ -44,5 +44,7 @@ jobs:
           systemctl restart spendmap
           curl -fsSL https://spendmap.effectx.com.au/ --output /tmp/spendmap-home.html
           grep -q 'YOUR MONEY, MADE CLEAR' /tmp/spendmap-home.html
-          curl -fsS https://spendmap.effectx.com.au/api/auth/me | grep -q '"user":null'
+          curl --retry 12 --retry-all-errors --retry-delay 1 -fsS \
+            https://spendmap.effectx.com.au/api/auth/me --output /tmp/spendmap-auth.json
+          grep -q '"user":null' /tmp/spendmap-auth.json
           echo "Production release ${GITHUB_SHA} verified"
