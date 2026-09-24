@@ -36,6 +36,5 @@ jobs:
           mv -Tf /var/www/spendmap/current.next /var/www/spendmap/current
           nginx -t
           systemctl reload nginx
-          curl -kfsSL --resolve spendmap.effectx.com.au:443:127.0.0.1 \
-            https://spendmap.effectx.com.au/ | grep -q 'YOUR MONEY, MADE CLEAR'
+          curl -fsSL https://spendmap.effectx.com.au/ | grep -q 'YOUR MONEY, MADE CLEAR'
           echo "Production release ${GITHUB_SHA} verified"
