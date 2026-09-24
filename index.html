@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#10211d" />
+    <title>Spendmap — make room for what matters</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header class="topbar"><a class="brand" href="#top">spend<span>map</span></a><nav><a href="#plan">Plan</a><a href="#insights">Insights</a><a href="#switches">Switches</a></nav><button id="reset" class="quiet">Reset demo</button></header>
+    <main id="top">
+      <section class="hero"><p class="eyebrow">YOUR MONEY, MADE CLEAR</p><h1>Know where it goes.<br><em>Choose what stays.</em></h1><p class="lede">Spendmap turns each pay cycle into a clear plan, then identifies practical ways to reduce the cost of living—without selling your data or pretending to be financial advice.</p><div class="trust"><span>Local-first</span><span>Explainable maths</span><span>No bank logins in v1</span></div></section>
+      <section class="summary" aria-label="Cash flow summary"><article><small>Monthly income</small><strong id="income">—</strong><span>normalised from your pay cycle</span></article><article><small>Monthly commitments</small><strong id="expenses">—</strong><span>fixed and flexible essentials</span></article><article class="surplus"><small>Room to move</small><strong id="surplus">—</strong><span id="surplus-copy">after entered expenses</span></article></section>
+      <section id="plan" class="workspace"><div class="section-title"><div><p class="eyebrow">01 / BUILD YOUR MAP</p><h2>Pay, commitments and everyday spending</h2></div><p>Add the regular numbers first. You can fine-tune with CSV data later.</p></div>
+        <div class="entry-grid"><form id="income-form" class="card form-card"><h3>Income</h3><label>Label<input name="name" required placeholder="e.g. Salary" /></label><div class="split"><label>Amount<input name="amount" required type="number" min="0" step="0.01" placeholder="3,200" /></label><label>Frequency<select name="frequency"><option value="weekly">Weekly</option><option value="fortnightly" selected>Fortnightly</option><option value="monthly">Monthly</option><option value="yearly">Yearly</option></select></label></div><button>Add income</button><ul id="income-list" class="entries"></ul></form>
+          <form id="expense-form" class="card form-card"><h3>Expense</h3><label>What is it?<input name="name" required placeholder="e.g. Mobile plan" /></label><div class="split"><label>Category<select name="category"><option value="housing">Housing</option><option value="groceries">Groceries</option><option value="mobile">Mobile</option><option value="internet">Internet</option><option value="energy">Energy</option><option value="insurance">Insurance</option><option value="subscriptions">Subscriptions</option><option value="transport">Transport</option><option value="other">Other</option></select></label><label>Amount<input name="amount" required type="number" min="0" step="0.01" placeholder="69" /></label></div><label>Frequency<select name="frequency"><option value="weekly">Weekly</option><option value="fortnightly">Fortnightly</option><option value="monthly" selected>Monthly</option><option value="yearly">Yearly</option></select></label><button>Add expense</button><ul id="expense-list" class="entries"></ul></form></div>
+      </section>
+      <section id="insights" class="workspace"><div class="section-title"><div><p class="eyebrow">02 / SEE THE PATTERN</p><h2>What your regular spending is doing</h2></div><p>Every figure uses the frequency you entered and shows its monthly equivalent.</p></div><div class="insight-grid"><article class="card"><h3>Category breakdown</h3><div id="categories" class="bars" aria-live="polite"></div></article><article class="card forecast"><h3>Pay-cycle view</h3><div id="forecast"></div><p class="note">This is a recurring cash-flow forecast, not an account balance or investment projection.</p></article></div></section>
+      <section id="switches" class="workspace"><div class="section-title"><div><p class="eyebrow">03 / MAKE ROOM</p><h2>Potential savings, with receipts</h2></div><p>Recommendations are comparisons, not advice. Check availability, inclusions and contract terms before switching.</p></div><div id="opportunities" class="opportunities" aria-live="polite"></div></section>
+    </main><footer>Spendmap keeps this demo profile in your browser only. Product offers shown are illustrative catalogue entries, not live quotes.</footer><script type="module" src="app.mjs"></script>
+  </body>
+</html>
