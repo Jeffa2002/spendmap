@@ -25,6 +25,12 @@ must disclose their assumptions, source and review date.
 - No advertising, data brokerage, behavioural tracking or sale of finance data.
 - Aggregated product catalogue data is separate from a person's financial data.
 
+## Public demo
+
+The public demo is deployed with GitHub Pages. It contains illustrative sample
+figures and catalogue entries only. Any profile created in the browser is held
+in that browser's local storage; clearing site data removes it.
+
 ## Roadmap
 
 - **Foundation (current):** domain model, normalisation and explainable
