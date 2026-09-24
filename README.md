@@ -1,11 +1,11 @@
-# LedgerLens
+# Spendmap
 
 A privacy-first personal-finance planner for turning a household's income and
 spending into a clear cash-flow plan and explainable savings opportunities.
 
 ## Product boundary
 
-LedgerLens is a budgeting and comparison aid, not financial advice. It never
+Spendmap is a budgeting and comparison aid, not financial advice. It never
 opens, switches, or applies for products on a person's behalf. Recommendations
 must disclose their assumptions, source and review date.
 
