@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@simplewebauthn/browser": "^14.0.0",
-    "@simplewebauthn/server": "^14.0.2",
+    "@simplewebauthn/server": "^14.0.3",
     "better-sqlite3": "^13.0.3",
     "express": "^5.2.1",
     "otpauth": "^9.5.2",
